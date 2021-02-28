@@ -11,6 +11,7 @@ function loadProducts(){
           productsHeading.textContent = item.description;
           const productsImg = createElem('img', 'products__img');
           productsImg.setAttribute('src', item.img);
+          productsImg.setAttribute('alt', item.description);
   
           const priceWrapper = createElem('div', 'products__price_wrapper');
           const price = createElem('span', 'products__price');

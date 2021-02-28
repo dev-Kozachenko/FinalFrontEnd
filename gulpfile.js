@@ -42,7 +42,7 @@ const path = {
     clean: buildFolderName
 };
 
-const isDev = false;
+const isDev = true;
 
 const webpackConfig = {
     mode: isDev ? 'development' : 'production',
