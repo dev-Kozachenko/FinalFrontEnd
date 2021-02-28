@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cannabidiol</title>
+    <link rel="shortcut icon" type="image/png" href="">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body class="page">
+    <a href="#scroll-header" id="moveUp">Move Up</a>
+    <header class="header" id="scroll-header">
+        <div class="container-fluid">
+            <input type="checkbox" class="navigation__checkbox" id="nav-toggle">
+            <label for="nav-toggle" class="navigation__button">
+                <span class="navigation__icon"></span>
+            </label>
+            <div class="header__menu">
+                <nav class="header__nav">
+                    <ul class="header__list header__list--left">
+                        <li class="header__item">
+                            <a href="#" class="header__link ">Home</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="#scroll-products" class="header__link">Products</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="#" class="header__link">Faqs</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="#" class="header__link">Contact us</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="#" class="header__logo">
+                    <img src="images/header_logo.png" alt="Logo">
+                </a>
+                <ul class="header__list header__list--right">
+                    <li class="header__item">
+                        <a href="#" class="header__link">Login</a>
+                    </li>
+                    <li class="header__item header__item--border">
+                        <form action="#" class="search">
+                            <input class="search_input" type="text" placeholder="Search">
+                            <button class="search_btn">
+                                <img class="search_btn--img" src="images/start_search.svg" alt="search">
+                                <span class="header__link">Search</span>
+                            </button>
+                        </form>
+                    </li>
+                    <li class="header__item">
+                        <a href="#" id='cart__btn' class="header__link">Cart 
+                            <span id='cart__count'></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="start">
+            <div class="container">
+                <div class="start__wrapper">
+                    <div class="start__text">
+                        <h1 class="start__text_heading">Enhancing life <br> Excelling in care</h1>
+                        <p class="start__text_paragraph">Choose Wiseli. Choose CBD.</p>
+                        <a href="#" class="start__btn">Start shopping &emsp; &mdash;&mdash;</a>
+                        <a href="#" class="start__text_seeAll">See all products&nbsp;&xrarr;</a>
+                    </div>
+                    <a class="start__arrow" href="#scroll-aboul">
+                        <img src="images/startArrow.png" alt="down">
+                    </a>
+                </div>
+            </div>
+            <div class="start__potion">
+                &mdash;&mdash;&mdash;&mdash;&emsp; Cbd potion health
+            </div>
+            <div id="cart__wrapper" class="u-display-none">
+                <div class="cart__close">
+                    <span class="products__price">Close</span>
+                    <a class="products__btn" id='cart__close' href="#">x</a>
+                </div>
+                <div class='cart'>
+        
+                </div>
+                <div class="products__price_wrapper cart__checkout ">
+                    <span class="cart__totalSum products__price"></span>
+                    <a class="products__btn" href="#">Checkout</a>
+                </div>
+                
+            </div>
+        </section>
+        <div class="container">
+          <section class="about" id="scroll-aboul">
+            <img class="about__img" src="./images/about.jpg" alt="about">
+        
+            <div class="nav-tabs">
+              <a href="#" data-tab="1" class="heading--primary nav-tabs_item active">What is CBD?</a>
+              <a href="#" data-tab="2" class="heading--primary nav-tabs_item">Benefits</a>
+              <a href="#" data-tab="3" class="heading--primary nav-tabs_item">OUR difference</a>
+            </div>
+        
+            <div data-tab-content="1" class="about__panels tab-pane active">
+              <div class="about__content">
+                <h3 class="about__content_heading">What it is and how <br> it works</h3>
+                <p class="about__content_text">CBD is short for cannabidiol. It is a phytocannabinoid found in hemp and
+                  known for supporting the body and mind in many ways.* Charlotte’s Web products have cannabinoids with CBD
+                  extract.</p>
+                <p class="about__content_text">
+                  Not to be confused with oil from hemp seeds (which doesn’t contain cannabinoids), CBD comes from the flowers
+                  and leaves of the hemp plant.
+                </p>
+                <p class="about__content_text">
+                  Why does CBD work? The human body has a vast network of receptors, the endocannabinoid system.
+                </p>
+              </div>
+              <div class="about__content_img">
+                <img class="about__content_img-item" src="./images/about_1.jpg" alt="About">
+                <img class="about__content_img-item" src="./images/about_2.jpg" alt="About">
+              </div>
+            </div>
+        
+            <div data-tab-content="2" class="about__panels tab-pane">
+              <div class="about__content">
+                <h3 class="about__content_heading">What are our benefits</h3>
+                <p class="about__content_text"> Why does CBD work? The human body has a vast network of receptors, the
+                  endocannabinoid system.
+                </p>
+                <p class="about__content_text">
+                  Not to be confused with oil from hemp seeds (which doesn’t contain cannabinoids), CBD comes from the flowers
+                  and leaves of the hemp plant.
+                </p>
+                <p class="about__content_text">CBD is short for cannabidiol. It is a phytocannabinoid found in hemp and
+                  known for supporting the body and mind in many ways.* Charlotte’s Web products have cannabinoids with CBD
+                  extract.
+                </p>
+              </div>
+              <div class="about__content_img">
+                <img class="about__content_img-item" src="./images/about_3.jpg" alt="About">
+                <img class="about__content_img-item" src="./images/about_4.jpg" alt="About">
+              </div>
+            </div>
+        
+            <div data-tab-content="3" class="about__panels tab-pane">
+              <div class="about__content">
+                <h3 class="about__content_heading">It is our difference</h3>
+                <p class="about__content_text">Not to be confused with oil from hemp seeds (which doesn’t contain cannabinoids),
+                  CBD comes from the flowers and leaves of the hemp plant.</p>
+                <p class="about__content_text">
+                  CBD is short for cannabidiol. It is a phytocannabinoid found in hemp and
+                  known for supporting the body and mind in many ways.* Charlotte’s Web products have cannabinoids with CBD
+                  extract.
+                </p>
+                <p class="about__content_text">
+                  Why does CBD work? The human body has a vast network of receptors, the endocannabinoid system.
+                </p>
+              </div>
+              <div class="about__content_img">
+                <img class="about__content_img-item" src="./images/about_5.jpg" alt="About">
+                <img class="about__content_img-item" src="./images/about_2.jpg" alt="About">
+              </div>
+            </div>
+        
+          </section>
+        </div>
+        <section id="scroll-products" class="products">
+            <h2 class="heading--primary u-text-center">CBD featured products</h2>
+            <div class="products__wrapper">
+                <div class="row" id="products__wrapper">
+               
+                </div>
+            </div>
+            <div class="products__modal_wrapper">
+            <div class="products__modal">
+                <span class="products__modal_close">
+                    &times;
+                </span>
+                <h3 class="products__modal_heading"></h3>
+                <img class="products__modal_img" alt="">
+                <p class="products__modal_text"></p>
+                <div class="products__price_wrapper">
+                    <span class="products__price"></span>
+                    <a class="products__btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        </section>
+        <div class="container">
+            <div class="questions">
+                <h2 class="heading--primary u-text-center">
+                    Frequently asked questions
+                </h2>
+                <div class="panel-group">
+                    <h3 class="panel-title panel-close"> What is Cannabidiol (CBD)? </h3>
+                    <div class="panel-body ">
+                        Because CBD from hemp has no psychoactive effects, the purchase, sales, or possession of hemp CBD products are completely legal in all 50 States. 
+                    </div>
+                    <h3 class="panel-title panel-close"> Is Hemp-Derived Cannabidiol (CBD) Legal?</h3>
+                    <div class="panel-body">
+                        Because CBD from hemp has no psychoactive effects, the purchase, sales, or possession of hemp CBD products are completely legal in all 50 States. 
+                    </div>
+                    <h3 class="panel-title panel-close">Are there any negative side effects?</h3>
+                    <div class="panel-body">
+                        Because CBD from hemp has no psychoactive effects, the purchase, sales, or possession of hemp CBD products are completely legal in all 50 States. 
+                    </div>
+                    <h3 class="panel-title panel-close"> Do you offer a return policy?</h3>
+                    <div class="panel-body">
+                        Because CBD from hemp has no psychoactive effects, the purchase, sales, or possession of hemp CBD products are completely legal in all 50 States. 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="reviews">
+            <div class="reviews__wrapper">
+        
+                <div class="reviews__item" data-lightbox="reviews">
+                    <div class="rating-area">
+                        <input type="radio" id="star-5" name="rating" value="5">
+                        <label for="star-5" title="Оценка «5»">&#9733;</label>
+                        <input type="radio" id="star-4" name="rating" value="4">
+                        <label for="star-4" title="Оценка «4»">&#9733;</label>
+                        <input type="radio" id="star-3" name="rating" value="3">
+                        <label for="star-3" title="Оценка «3»">&#9733;</label>
+                        <input type="radio" id="star-2" name="rating" value="2">
+                        <label for="star-2" title="Оценка «2»">&#9733;</label>
+                        <input type="radio" id="star-1" name="rating" value="1">
+                        <label for="star-1" title="Оценка «1»">&#9733;</label>
+                    </div>
+                    <div class="reviews__text">
+                        <p class="reviews_text">I have tried another product after using this one successfully, and I am Back for good! The flavour, the lightness of the oil and the health benefits I have gotten with this oil are amazing!</p>
+                        <p class="reviews_author">&mdash;&emsp;Mark J.</p>
+                    </div>
+                </div>
+        
+                <div class="reviews__item" data-lightbox="reviews">
+                    <div class="rating-area">
+                        <input type="radio" id="star-5" name="rating" value="5">
+                        <label for="star-5" title="Оценка «5»">&#9733;</label>
+                        <input type="radio" id="star-4" name="rating" value="4">
+                        <label for="star-4" title="Оценка «4»">&#9733;</label>
+                        <input type="radio" id="star-3" name="rating" value="3">
+                        <label for="star-3" title="Оценка «3»">&#9733;</label>
+                        <input type="radio" id="star-2" name="rating" value="2">
+                        <label for="star-2" title="Оценка «2»">&#9733;</label>
+                        <input type="radio" id="star-1" name="rating" value="1">
+                        <label for="star-1" title="Оценка «1»">&#9733;</label>
+                    </div>
+                    <div class="reviews__text">
+                        <p class="reviews_text">I have tried another product after using this one successfully, and I am Back for good! The flavour, the lightness of the oil and the health benefits I have gotten with this oil are amazing!</p>
+                        <p class="reviews_author">&mdash;&emsp;Mark J.</p>
+                    </div>
+                </div>
+        
+                <div class="reviews__item" data-lightbox="reviews">
+                    <div class="rating-area">
+                        <input type="radio" id="star-5" name="rating" value="5">
+                        <label for="star-5" title="Оценка «5»">&#9733;</label>
+                        <input type="radio" id="star-4" name="rating" value="4">
+                        <label for="star-4" title="Оценка «4»">&#9733;</label>
+                        <input type="radio" id="star-3" name="rating" value="3">
+                        <label for="star-3" title="Оценка «3»">&#9733;</label>
+                        <input type="radio" id="star-2" name="rating" value="2">
+                        <label for="star-2" title="Оценка «2»">&#9733;</label>
+                        <input type="radio" id="star-1" name="rating" value="1">
+                        <label for="star-1" title="Оценка «1»">&#9733;</label>
+                    </div>
+                    <div class="reviews__text">
+                        <p class="reviews_text">I have tried another product after using this one successfully, and I am Back for good! The flavour, the lightness of the oil and the health benefits I have gotten with this oil are amazing!</p>
+                        <p class="reviews_author">&mdash;&emsp;Mark J.</p>
+                    </div>
+                </div>
+        
+            </div>
+            <div class="reviews__nav">
+                <span class="reviews__nav_item reviews__nav--prev">&larr;</span>
+                <span class="reviews__nav_item reviews__nav--next">&rarr;</span>
+            </div>
+        </section>
+    </main>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

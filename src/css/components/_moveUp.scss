@@ -1,0 +1,18 @@
+#moveUp {
+    position: fixed;
+    bottom: 20px;
+    background-color: $color-primary-light;
+    border-radius: 50%;
+    right: 20px;
+    z-index: 100;
+    padding: 20px 5px; 
+
+    &:hover{
+        background-color: $color-hover;
+    }
+
+    @media (max-width: $SM ) {
+        padding: 10px 5px;
+        font-size: 12px;
+    } 
+}

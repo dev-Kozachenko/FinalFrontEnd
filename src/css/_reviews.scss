@@ -1,0 +1,83 @@
+.reviews {
+    background: linear-gradient(rgba($color-background, .6), rgba($color-background, .6)), url('../images/reviews_bg.jpg') no-repeat,;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	position: relative;
+
+	@media (max-width: $SM ) {
+		height: 500px;
+	} 
+
+    &__wrapper {
+        width: 66.6%;
+
+		@media (max-width: $SM ) {
+           width: 100%;
+		   padding: 15px;
+        } 
+    }
+
+	&__item {
+		padding: 200px 0;
+	}
+
+	&__nav {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		display: flex;
+		font-size: 30px;
+		transform: translateX(-50%);
+		color: $color-primary-light;
+
+		&_item {
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100px;
+			height: 80px;
+			border: 1px solid $color-primary-light;
+			cursor: pointer;
+
+			&:not(:last-child) {
+				border-right: none;
+			}
+		}
+	}
+}
+
+.rating-area {
+	overflow: hidden;
+	width: 265px;
+	margin: 0 auto;
+}
+.rating-area:not(:checked) > input {
+	display: none;
+}
+.rating-area:not(:checked) > label {
+	float: right;
+	width: 42px;
+	cursor: pointer;
+	font-size: 30px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+
+.rating-area > input:checked ~ label {
+	color: #ffd700;
+	text-shadow: 1px 1px #c60;
+}
+
+.rating-area:not(:checked) > label:hover ~ label {
+	color: #ffd700;
+}
+
+.rating-area > label:hover ~ input:checked ~ label {
+	color: #ffd700;
+	text-shadow: 1px 1px #dda520;
+}
+.rate-area > label:active {
+	position: relative;
+}
