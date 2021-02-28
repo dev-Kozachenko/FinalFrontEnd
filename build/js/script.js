@@ -2527,7 +2527,7 @@ try {
 var moveUp = document.getElementById('moveUp');
 window.addEventListener('scroll', function () {
   moveUp.hidden = pageYOffset < document.documentElement.clientHeight;
-}); //
+});
 
 function showElement(element) {
   element.style.display = 'flex';
@@ -2665,6 +2665,8 @@ function showModal(item) {
   productsModalBtn.addEventListener('click', function (event) {
     event.preventDefault();
     Object(_addToCart__WEBPACK_IMPORTED_MODULE_3__["default"])(item);
+    modal.style.display = 'none';
+    document.body.style.overflow = 'visible';
   });
   modal.dataset.articul = item.articul;
   modal.addEventListener('click', _addHidden__WEBPACK_IMPORTED_MODULE_2__["default"]);
@@ -2902,28 +2904,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function isEmpty(obj) {
-  for (var key in obj) {
-    return false;
-  }
-
-  return true;
-}
-
 function renderCart() {
-  function removeCartItem() {
-    this.closest('.cart__item').remove();
-    delete _cart__WEBPACK_IMPORTED_MODULE_3__["default"][this.articul];
-    console.log(_cart__WEBPACK_IMPORTED_MODULE_3__["default"]);
-    localStorage.setItem('cart', JSON.stringify(_cart__WEBPACK_IMPORTED_MODULE_3__["default"]));
-  }
-
   var cartWrapper = document.getElementById('cart__wrapper');
   var carts = cartWrapper.querySelector('.cart');
   var cartCount = document.getElementById('cart__count');
   var totalSum = cartWrapper.querySelector('.cart__totalSum');
   var sumCount = 0;
   var sumPrice = 0;
+
+  function isEmpty(obj) {
+    for (var key in obj) {
+      return false;
+    }
+
+    return true;
+  }
+
+  function removeCartItem() {
+    this.closest('.cart__item').remove();
+    delete _cart__WEBPACK_IMPORTED_MODULE_3__["default"][this.articul];
+    console.log(_cart__WEBPACK_IMPORTED_MODULE_3__["default"]);
+    localStorage.setItem('cart', JSON.stringify(_cart__WEBPACK_IMPORTED_MODULE_3__["default"]));
+  }
 
   var _loop = function _loop(key) {
     var item = _productList__WEBPACK_IMPORTED_MODULE_4__["default"].find(function (item) {
@@ -2933,6 +2935,9 @@ function renderCart() {
     var cartRemove = Object(_createElem__WEBPACK_IMPORTED_MODULE_5__["default"])('button', 'cart__nav_btn');
     cartRemove.textContent = 'x';
     cartRemove.addEventListener('click', function () {
+      sumPrice -= _cart__WEBPACK_IMPORTED_MODULE_3__["default"][key] * item.price;
+      sumCount -= _cart__WEBPACK_IMPORTED_MODULE_3__["default"][key];
+      cartContent();
       this.closest('.cart__item').remove();
       delete _cart__WEBPACK_IMPORTED_MODULE_3__["default"][item.articul];
       localStorage.setItem('cart', JSON.stringify(_cart__WEBPACK_IMPORTED_MODULE_3__["default"]));
@@ -2943,6 +2948,9 @@ function renderCart() {
       _cart__WEBPACK_IMPORTED_MODULE_3__["default"][item.articul]++;
       localStorage.setItem('cart', JSON.stringify(_cart__WEBPACK_IMPORTED_MODULE_3__["default"]));
       cartCount.textContent = "".concat(_cart__WEBPACK_IMPORTED_MODULE_3__["default"][key], " items");
+      sumPrice += item.price;
+      sumCount++;
+      cartContent();
     });
     var cartMinus = Object(_createElem__WEBPACK_IMPORTED_MODULE_5__["default"])('button', 'cart__nav_btn');
     cartMinus.textContent = '-';
@@ -2951,6 +2959,9 @@ function renderCart() {
         _cart__WEBPACK_IMPORTED_MODULE_3__["default"][item.articul]--;
         localStorage.setItem('cart', JSON.stringify(_cart__WEBPACK_IMPORTED_MODULE_3__["default"]));
         cartCount.textContent = "".concat(_cart__WEBPACK_IMPORTED_MODULE_3__["default"][key], " items");
+        sumPrice -= item.price;
+        sumCount--;
+        cartContent();
       } else {
         this.closest('.cart__item').remove();
         delete _cart__WEBPACK_IMPORTED_MODULE_3__["default"][item.articul];
@@ -2983,13 +2994,17 @@ function renderCart() {
     _loop(key);
   }
 
-  if (isEmpty(_cart__WEBPACK_IMPORTED_MODULE_3__["default"])) {
-    totalSum.textContent = 'Cart is empty';
-    cartCount.textContent = '';
-  } else {
-    totalSum.textContent = "Total value of goods $ ".concat(sumPrice.toFixed(2), " USD");
-    cartCount.textContent = "(".concat(sumCount, ")");
+  function cartContent() {
+    if (isEmpty(_cart__WEBPACK_IMPORTED_MODULE_3__["default"])) {
+      totalSum.textContent = 'Cart is empty';
+      cartCount.textContent = '';
+    } else {
+      totalSum.textContent = "Total value of goods $ ".concat(sumPrice.toFixed(2), " USD");
+      cartCount.textContent = "(".concat(sumCount, ")");
+    }
   }
+
+  cartContent();
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (renderCart);

@@ -24,6 +24,8 @@ function showModal(item){
     productsModalBtn.addEventListener('click', function(event){
       event.preventDefault();
       addToCart(item);
+      modal.style.display = 'none';
+      document.body.style.overflow = 'visible';
     });
     modal.dataset.articul = item.articul;
     modal.addEventListener('click', addHidden);

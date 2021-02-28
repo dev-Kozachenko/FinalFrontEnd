@@ -2,21 +2,7 @@ import cart from './cart';
 import productList from './productList';
 import createElem from './createElem';
 
-function isEmpty(obj) {
-    for (let key in obj) {
-        return false;
-    }
-    return true;
-}
-
 function renderCart() {
-
-    function removeCartItem() {
-        this.closest('.cart__item').remove()
-        delete cart[this.articul]
-        console.log(cart)
-        localStorage.setItem('cart', JSON.stringify(cart))
-    }
 
     const cartWrapper = document.getElementById('cart__wrapper');
     const carts = cartWrapper.querySelector('.cart');
@@ -25,6 +11,21 @@ function renderCart() {
 
     let sumCount = 0;
     let sumPrice = 0;
+
+    function isEmpty(obj) {
+        for (let key in obj) {
+            return false;
+        }
+        return true;
+    }
+
+    function removeCartItem() {
+        this.closest('.cart__item').remove()
+        delete cart[this.articul]
+        console.log(cart)
+        localStorage.setItem('cart', JSON.stringify(cart))
+    }
+
     for (let key in cart) {
         let item = productList.find(function (item) {
             return item.articul === +key
@@ -34,9 +35,13 @@ function renderCart() {
         const cartRemove = createElem('button', 'cart__nav_btn');
         cartRemove.textContent = 'x';
         cartRemove.addEventListener('click', function () {
+            sumPrice -= cart[key] * item.price;
+            sumCount -= cart[key];
+            cartContent();
             this.closest('.cart__item').remove()
-            delete cart[item.articul]
-            localStorage.setItem('cart', JSON.stringify(cart))
+            delete cart[item.articul];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
         });
         const cartPlus = createElem('button', 'cart__nav_btn');
         cartPlus.textContent = '+';
@@ -44,6 +49,9 @@ function renderCart() {
             cart[item.articul]++
             localStorage.setItem('cart', JSON.stringify(cart));
             cartCount.textContent = `${cart[key]} items`;
+            sumPrice += item.price;
+            sumCount++;
+            cartContent();
         });
 
         const cartMinus = createElem('button', 'cart__nav_btn');
@@ -53,6 +61,9 @@ function renderCart() {
                 cart[item.articul]--
                 localStorage.setItem('cart', JSON.stringify(cart));
                 cartCount.textContent = `${cart[key]} items`;
+                sumPrice -= item.price;
+                sumCount--;
+                cartContent();
             } else {
                 this.closest('.cart__item').remove()
                 delete cart[item.articul]
@@ -86,14 +97,16 @@ function renderCart() {
         sumCount += cart[key];
     }
 
-    
-    if (isEmpty(cart)) {
-        totalSum.textContent = 'Cart is empty';
-        cartCount.textContent = '';
-    } else {
-        totalSum.textContent = `Total value of goods $ ${sumPrice.toFixed(2)} USD`;
-        cartCount.textContent = `(${sumCount})`;
+    function cartContent(){
+        if (isEmpty(cart)) {
+            totalSum.textContent = 'Cart is empty';
+            cartCount.textContent = '';
+        } else {
+            totalSum.textContent = `Total value of goods $ ${sumPrice.toFixed(2)} USD`;
+            cartCount.textContent = `(${sumCount})`;
+        }
     }
+    cartContent()
 
 }
 

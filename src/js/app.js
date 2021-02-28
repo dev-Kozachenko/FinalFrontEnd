@@ -45,7 +45,6 @@ const moveUp = document.getElementById('moveUp');
     moveUp.hidden = (pageYOffset < document.documentElement.clientHeight);
   });
 
-  //
   function showElement(element){
     element.style.display = 'flex';
   }

@@ -1,7 +1,113 @@
 .footer {
+    padding: 170px 0 40px;
+    color:$color-primary;
+
+    @media (max-width: $SM) { 
+        padding: 40px 0;
+    }
     
-    &__wrapper {
+    &__side {
+        margin-top: 25px;
+        border-top: 2px solid $color-primary;
+        padding-top: 100px;
+
+        @media (max-width: $SM) { 
+            padding-top: 30px;
+        }
+    }
+
+    &__link {
+        color:$color-primary;
+        display: block;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        line-height: 40px;
+        text-align: center;
+    }
+
+    &__center {
+        text-align: center;
+    }
+
+    &__form {
+        margin-top: 120px;
+
+        &_wrapper {
+            border: 1px solid $color-primary;
+            display: flex;
+            position: relative;
+            margin-top: 20px;
+            margin-bottom: 50px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 30px;
+                width: 1px;
+                border-right: 1px solid $color-primary;
+                top: 7px; 
+                right: 60px;
+            }
+        }
+
+        &_label {
+            color: $color-black;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        &_input {
+            outline: none;
+            padding: 15px 25px;
+            width: 100%;
+
+        }
+
+        &_submit {
+            padding: 20px;
+            color: $color-primary;
+            font-size: 20px;
+            line-height: 1px;
+            cursor: pointer;
+            outline: none;
+        }
+    }
+    
+
+
+    &__social {
+        margin-top: 60px;
+        position: relative;
         display: flex;
-        margin-top: 180px;
+        justify-content: center;
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 55px;
+            width: 2px;
+            border: 1px solid $color-primary;
+            bottom: -85px;
+            left: 50%;
+        }
+
+        &_link {
+
+            &:not(:last-child) {
+                margin-right: 50px;
+            }
+        }
+
+        &_icon {
+            fill: $color-primary;
+            height: 20px;
+        }
+    }
+
+    &__copyright {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
     }
 }
