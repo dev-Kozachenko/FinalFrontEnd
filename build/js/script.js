@@ -2531,7 +2531,22 @@ window.addEventListener('scroll', function () {
 
 function showElement(element) {
   element.style.display = 'flex';
-}
+} //search
+
+
+var searchInput = document.querySelector('.search_input');
+var seachBtn = document.querySelector('.search_btn');
+seachBtn.addEventListener('click', function () {
+  console.log(searchInput.value);
+
+  if (getComputedStyle(searchInput).width === '10px') {
+    searchInput.style.width = '100%';
+    searchInput.style.opacity = '1';
+  } else if (searchInput.value === '') {
+    searchInput.style.width = '0';
+    searchInput.style.opacity = '0';
+  }
+});
 
 /***/ }),
 
@@ -2639,6 +2654,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _addHidden__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./addHidden */ "./src/js/lib/addHidden.js");
 /* harmony import */ var _addToCart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./addToCart */ "./src/js/lib/addToCart.js");
+/* harmony import */ var _renderCart__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./renderCart */ "./src/js/lib/renderCart.js");
+
 
 
 

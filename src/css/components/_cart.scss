@@ -56,6 +56,11 @@
         margin-right: 15px;
     }
 
+    &__count {
+        display: inline-block;
+        min-width: 60px;
+    }
+
     &__checkout {
         margin-top: 10px;
         border: 1px solid $color-primary-light;
@@ -82,9 +87,7 @@
 
             &:active {
                 transform: translateY(1px);
-            }
-
-           
+            }     
         }
     }
 
@@ -93,4 +96,9 @@
             font-size: 16px;
         }
     }
+}
+
+#cart__count {
+    display: inline-block;
+    min-width: 30px;
 }

@@ -1,5 +1,6 @@
 import addHidden from './addHidden';
 import addToCart from './addToCart';
+import renderCart from './renderCart';
 
 function showModal(item){
     const modal = document.querySelector('.products__modal_wrapper');

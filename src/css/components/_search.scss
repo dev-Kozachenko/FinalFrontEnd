@@ -1,12 +1,22 @@
 .search {
     height: 30px;
     display: flex;
+    justify-content: flex-end;
+    // @media (max-width: $SM) { 
+    //     position: absolute;
+    // }
+
 
     &_input {
         display: block;
-        padding: 0 20px;
+        padding: 0 5px;
         background-color: $color-white;
         outline: none;
+        opacity: 0;
+        width: 0;
+        transition: ease .3s;
+
+        
     }
 
     &_btn {

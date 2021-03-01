@@ -49,3 +49,18 @@ const moveUp = document.getElementById('moveUp');
     element.style.display = 'flex';
   }
 
+  //search
+  const searchInput = document.querySelector('.search_input');
+  const seachBtn = document.querySelector('.search_btn');
+
+  seachBtn.addEventListener('click', function(){
+    console.log(searchInput.value)
+   if (getComputedStyle(searchInput).width === '10px') {
+    searchInput.style.width = '100%';
+    searchInput.style.opacity = '1';
+    } else if (searchInput.value === '') {
+      searchInput.style.width = '0';
+      searchInput.style.opacity = '0';
+   } 
+  })
+
